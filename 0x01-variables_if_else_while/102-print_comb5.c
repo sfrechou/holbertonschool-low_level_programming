@@ -19,14 +19,14 @@ for (num3 = '0'; num3 <= '9'; num3++)
 {
 for (num4 = '0'; num4 <= '9'; num4++)
 {
-if (num1 < num2 || (num1 == num3 && num2 < num4))
+if (num1 < num3 || (num1 == num3 && num2 < num4))
 {
 putchar (num1);
 putchar (num2);
 putchar (' ');
 putchar (num3);
 putchar (num4);
-if ((num1 + num2) == '17' && (num3 + num4) == '18')
+if (num1 == '9' && num2 == '8' && num3 == '9' && num4 == '9')
 {}
 else
 {
