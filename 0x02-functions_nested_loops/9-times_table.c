@@ -1,5 +1,5 @@
 #include "holberton.h"
-void print(int multi);
+
 /**
  * _putchar - writes the character c to stdout
  * : The character to print
@@ -9,11 +9,20 @@ void print(int multi);
  */
 void times_table(void)
 {
-
-
-}
-void print(int multi)
-{
-
+  int a, b, c, d, e;
+  for (a = 0; a <= 9; a++)
+    {
+      for (b = 0; b <= 9; b++)
+	{
+	  c = a * b;
+	  d = c / 10;
+	  e = c % 10;
+	  _putchar (d + '0');
+	  _putchar (e + '0');
+	  _putchar (',');
+	  _putchar (' ');
+	}
+      _putchar ('\n');
+    }
 
 }
