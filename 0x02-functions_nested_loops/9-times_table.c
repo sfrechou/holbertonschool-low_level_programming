@@ -17,10 +17,37 @@ void times_table(void)
 	  c = a * b;
 	  d = c / 10;
 	  e = c % 10;
-	  _putchar (d + '0');
-	  _putchar (e + '0');
-	  _putchar (',');
+	  
+	  if (b == 9 && d != 0)
+	    {
+	      _putchar (' ');
+	      _putchar (d + '0');
+	      _putchar (e + '0');
+	    }
+else
+	  if (b == 0)
+	    {
+	      _putchar (d + '0');
+	      _putchar (',');
+	}
+	  else
+	    	  if (d == 0)
+	    {
+	      _putchar (' ');
 	  _putchar (' ');
+	  _putchar (e + '0');
+	  if (b != 9 && d == 0)
+	    {
+	  _putchar (',');
+	    }
+	    }
+	  else
+	    {
+	      _putchar (' ');
+	      _putchar (d + '0');
+	      _putchar (e + '0');
+	      _putchar (',');
+	    }
 	}
       _putchar ('\n');
     }
