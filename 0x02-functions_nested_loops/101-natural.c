@@ -7,7 +7,7 @@
  * Return: On success 1.
  * On error, -1 is returned, and errno is set appropriately.
  */
-int natural(void)
+void natural(void)
 {
 int sum = 0;
 int a;
