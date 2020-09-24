@@ -29,9 +29,13 @@ before = 0;
 for (a = 0; a <= 48; a++)
 {
 next = now + before;
-printf("%ld, ", next);
+printf("%ld", next);
 before = now;
 now = next;
+if (a != 48)
+{
+printf(", ");
+}
 }
 printf("\n");
 }
