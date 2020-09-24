@@ -26,13 +26,13 @@ void fibonacci(void)
 long int a, now, before, next;
 now = 1;
 before = 0;
-for (a = 0; a <= 47; a++)
+for (a = 0; a <= 49; a++)
 {
 next = now + before;
 printf("%ld", next);
 before = now;
 now = next;
-if (a != 47)
+if (a != 49)
 {
 printf(", ");
 }
