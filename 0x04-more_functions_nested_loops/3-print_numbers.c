@@ -14,5 +14,5 @@ for (a = 0; a <= 9; a++)
 {
 _putchar (a + '0');
 }
-putchar ('\n');
+_putchar ('\n');
 }
