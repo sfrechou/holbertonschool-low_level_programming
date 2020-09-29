@@ -1,5 +1,4 @@
 #include "holberton.h"
-#include <stdio.h>
 
 /**
  * print_rev - Entry point
@@ -9,20 +8,21 @@
  */
 void print_rev(char *s)
 {
-int length;
-length = 0;
+  int length;
+  length = 0;
 
-while (*s != '\0')
-{
-length++;
-s++;
-}
-s--;
-while (length >= 0)
-{
-_putchar(*s);
-length--;
-s--;
-}
-_putchar ('\n');
+  while (*s != '\0')
+    {
+      length++;
+      s++;
+    }
+  s--;
+
+  while (length >= 0)
+    {
+      _putchar(*s);
+      length--;
+      s--;
+    }
+  _putchar ('\n');
 }
