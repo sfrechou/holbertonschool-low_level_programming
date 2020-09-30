@@ -45,6 +45,13 @@ return (res);
 }
 }
 
+/**
+ * _pow - Entry point
+ * @n: d
+ *
+ *
+ * Return: Always 0 (Success)
+ */
 int _pow(int n)
 {
 int xres = 1;
