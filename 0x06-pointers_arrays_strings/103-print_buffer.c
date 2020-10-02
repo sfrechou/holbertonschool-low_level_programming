@@ -1,28 +1,37 @@
 #include "holberton.h"
 #include <stdio.h>
-
+void ponerespacios(int j);
 /**
  * print_buffer - Entry point
  * @b: d
  * @size: d
- *
  * Return: Always 0 (Success)
  */
 void print_buffer(char *b, int size)
 {
 if (size > 0)
 {
-int cont = 0, i, i2, tope;
+int cont = 0, i, i2, tope, j, k;
 int p = 0;
 tope = 10;
+j = 10;
 for (i = 0; i < size; i += 10)
 {
 printf("%08x: ", cont);
-printf("%02x%02x ", b[i], b[i + 1]);
-printf("%02x%02x ", b[i + 2], b[i + 3]);
-printf("%02x%02x ", b[i + 4], b[i + 5]);
-printf("%02x%02x ", b[i + 6], b[i + 7]);
-printf("%02x%02x ", b[i + 8], b[i + 9]);
+if (size - cont < 10)
+{
+j = size - cont;
+}
+for (k = 0; k < j; k = k + 2)
+{
+printf("%02x", b[i + k]);
+if (j % 2 == 0)
+{
+printf("%02x", b[i + k + 1]);
+printf(" ");
+}
+}
+ponerespacios(j);
 for (i2 = cont; i2 < cont + 10; i2 += 10)
 {
 if (size - cont < 10)
@@ -51,4 +60,16 @@ putchar('\n');
 }
 else
 printf("\n");
+}
+/**
+ * ponerespacios - saf
+ * @j:sdfsd
+ */
+void ponerespacios(int j)
+{
+int t;
+for (t = 0; t <= j + 3 && j != 10; t++)
+{
+printf(" ");
+}
 }
