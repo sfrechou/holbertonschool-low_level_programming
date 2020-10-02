@@ -35,4 +35,5 @@ pass[i++] = resto;
 pass[i++] = '\0';
 
 printf("%s\n", pass);
+return (0);
 }
