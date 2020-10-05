@@ -19,6 +19,10 @@ if (needle[i] == haystack[j])
 {
 continue;
 }
+ else
+   {
+     break;
+   }
 }
 return (needle + i);
 }
