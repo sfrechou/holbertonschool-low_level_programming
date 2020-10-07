@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * set_string - Entry point
+ * _puts_recursion - Entry point
  * @s: d
  *
  *
