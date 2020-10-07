@@ -2,9 +2,9 @@
 int _sqrt2(int a, int n);
 
 /**
- * _sqrt_recursion - Entry point
+ * _sqrt2 - Entry point
+ * @a: d
  * @n: d
- *
  *
  * Return: Always 0 (Success)
  */
