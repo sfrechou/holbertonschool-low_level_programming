@@ -1,0 +1,55 @@
+#include "holberton.h"
+#include <stdio.h>
+#include <stdlib.h>
+int _strlen(char *s);
+
+/**
+ * str_concat - Entry point
+ * @s1: d
+ * @s2: d
+ * Return: Always 0 (Success)
+ */
+char *str_concat(char *s1, char *s2)
+{
+char *array;
+int s1len, s2len, i , j;
+s1len = _strlen(s1);
+s2len = _strlen(s2);
+
+if (s1len == 0 || s2len == 0)
+{
+return (NULL);
+}
+else
+{
+array = (char *)malloc((s1len + s2len) * (sizeof(char)));
+for (i = 0; s1[i] != '\0'; i++)
+{
+array[i] = s1[i];
+}
+for (j = 0; s2[j] != '\0'; j++)
+{
+array[i + j] = s2[j];
+}
+return (array);
+}
+return (NULL);
+}
+
+/**
+ * _strlen - Entry point
+ * @s: d
+ *
+ * Return: Always 0 (Success)
+ */
+int _strlen(char *s)
+{
+int length;
+length = 0;
+while (*s != '\0')
+{
+length++;
+s++;
+}
+return (length);
+}
