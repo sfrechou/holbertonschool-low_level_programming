@@ -26,7 +26,7 @@ if (array == NULL)
 {
 return (NULL);
 }
-for (i = 0; str[i] != '\0'; i++)
+for (i = 0; i < x; i++)
 {
 array[i] = str[i];
 }
