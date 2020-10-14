@@ -12,17 +12,19 @@ int _strlen(char *s);
 char *str_concat(char *s1, char *s2)
 {
 char *array;
-int s1len, s2len, i , j;
+int s1len, s2len, i, j;
 s1len = _strlen(s1);
 s2len = _strlen(s2);
 
-if (s1len == 0 || s2len == 0)
+if (s1 == NULL && s2 == NULL)
 {
 return (NULL);
 }
 else
 {
-array = (char *)malloc((s1len + s2len) * (sizeof(char)));
+s1len = _strlen(s1);
+s2len = _strlen(s2);
+array = (char *)malloc((s1len + s2len) *(sizeof(char)));
 for (i = 0; s1[i] != '\0'; i++)
 {
 array[i] = s1[i];
