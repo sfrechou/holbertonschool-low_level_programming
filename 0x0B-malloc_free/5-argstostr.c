@@ -26,10 +26,10 @@ char *argstostr(int ac, char **av)
 		}
 	}
 	cont += ac;
-	quote = (char *)malloc(cont * sizeof(char));
+	printf("%d", cont);
+	quote = (char *)malloc(cont * sizeof(char) + 1);
 	if (quote == NULL)
 	{
-		free(quote);
 		return (NULL);
 	}
 	i = 0;
