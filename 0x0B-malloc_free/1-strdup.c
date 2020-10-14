@@ -15,7 +15,7 @@ char *array;
 int x, i;
 x = _strlen(str);
 
-if (x == 0)
+if (str == NULL)
 {
 return (NULL);
 }
