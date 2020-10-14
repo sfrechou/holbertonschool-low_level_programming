@@ -21,7 +21,7 @@ return (NULL);
 }
 else
 {
-array = (char *)malloc(x *(sizeof(char)));
+array = (char *)malloc(x *(sizeof(char) + 1));
 if (array == NULL)
 {
 return (NULL);
@@ -30,12 +30,12 @@ for (i = 0; str[i] != '\0'; i++)
 {
 array[i] = str[i];
 }
+return (array);
+}
 if (array == NULL)
 {
 free(array);
 return (NULL);
-} 
-return (array);
 }
 }
 
