@@ -23,9 +23,13 @@ else
 s1len = _strlen(s1);
 s2len = _strlen(s2);
 array = (char *)malloc((s1len + s2len) *sizeof(char) + 1);
-if (array == NULL)
+if (s1len == NULL && s2len == NULL)
 {
 return (array);
+}
+if (array == NULL)
+{
+return (NULL);
 }
 for (i = 0; i < s1len; i++)
 {
