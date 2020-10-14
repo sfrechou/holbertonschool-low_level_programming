@@ -32,11 +32,7 @@ array[i] = str[i];
 }
 return (array);
 }
-if (array == NULL)
-{
-free(array);
 return (NULL);
-}
 }
 
 #include "holberton.h"
