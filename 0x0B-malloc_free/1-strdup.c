@@ -30,8 +30,12 @@ for (i = 0; str[i] != '\0'; i++)
 {
 array[i] = str[i];
 }
-return (array);
+if (array == NULL)
+{
 free(array);
+return (NULL);
+} 
+return (array);
 }
 }
 
