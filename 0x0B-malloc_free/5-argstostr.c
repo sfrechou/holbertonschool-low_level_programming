@@ -26,7 +26,6 @@ char *argstostr(int ac, char **av)
 		}
 	}
 	cont += ac;
-	printf("%d", cont);
 	quote = (char *)malloc(cont * sizeof(char) + 1);
 	if (quote == NULL)
 	{
