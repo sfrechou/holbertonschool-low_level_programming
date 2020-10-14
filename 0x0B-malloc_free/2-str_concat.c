@@ -31,9 +31,9 @@ for (i = 0; i < s1len; i++)
 {
 array[i] = s1[i];
 }
-for (j = 0; j < s2len; j++)
+for (i = 0; i < s2len; i++)
 {
-array[i + j] = s2[j];
+array[i + s2len] = s2[i];
 }
 return (array);
 }
