@@ -24,7 +24,11 @@ else
 {
 s1len = _strlen(s1);
 s2len = _strlen(s2);
-array = (char *)malloc((s1len + s2len) *(sizeof(char)));
+array = (char *)malloc((s1len + s2len) * (sizeof(char) + 1));
+if (array == NULL)
+{
+return (NULL);
+}
 for (i = 0; s1[i] != '\0'; i++)
 {
 array[i] = s1[i];
@@ -35,7 +39,6 @@ array[i + j] = s2[j];
 }
 return (array);
 }
-return (NULL);
 }
 
 /**
