@@ -31,6 +31,7 @@ for (i = 0; str[i] != '\0'; i++)
 array[i] = str[i];
 }
 return (array);
+free(array);
 }
 }
 
