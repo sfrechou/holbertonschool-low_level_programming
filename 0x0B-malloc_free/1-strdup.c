@@ -22,13 +22,16 @@ return (NULL);
 else
 {
 array = (char *)malloc(x *(sizeof(char)));
+if (array == NULL)
+{
+return (NULL);
+}
 for (i = 0; str[i] != '\0'; i++)
 {
 array[i] = str[i];
 }
 return (array);
 }
-return (NULL);
 }
 
 #include "holberton.h"
