@@ -25,7 +25,7 @@ s2len = _strlen(s2);
 array = (char *)malloc((s1len + s2len) *sizeof(char) + 1);
 if (array == NULL)
 {
-return (NULL);
+return (array);
 }
 for (i = 0; i < s1len; i++)
 {
