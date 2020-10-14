@@ -25,6 +25,10 @@ return (NULL);
 for (i = 0; i < height; i++)
 {
 array[i] = (int *)malloc(width * sizeof(int));
+if (array == NULL)
+{
+return (NULL);
+}
 }
 for (i = 0; i < height; i++)
 {
