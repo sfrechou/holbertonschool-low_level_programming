@@ -16,10 +16,8 @@ int s1len, s2len, i;
 
 if (s1 == NULL && s2 == NULL)
 {
-return (0);
+return (NULL);
 }
-else
-{
 s1len = _strlen(s1);
 s2len = _strlen(s2);
 array = (char *)malloc((s1len + s2len) *sizeof(char) + 1);
@@ -36,7 +34,6 @@ for (i = 0; i < s2len; i++)
 array[i + s1len] = s2[i];
 }
 return (array);
-}
 }
 
 /**
