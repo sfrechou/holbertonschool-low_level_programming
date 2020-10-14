@@ -16,17 +16,13 @@ int s1len, s2len, i;
 
 if (s1 == NULL && s2 == NULL)
 {
-return (NULL);
+return (0);
 }
 else
 {
 s1len = _strlen(s1);
 s2len = _strlen(s2);
 array = (char *)malloc((s1len + s2len) *sizeof(char) + 1);
-if (s1[0] == '\0' && s2[0] == '\0')
-{
-return (array);
-}
 if (array == NULL)
 {
 return (NULL);
