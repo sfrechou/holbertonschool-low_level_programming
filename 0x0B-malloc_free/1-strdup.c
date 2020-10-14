@@ -21,7 +21,7 @@ return (NULL);
 else
 {
 x = _strlen(str);
-array = (char *)malloc(x * sizeof(char) + 1);
+array = (char *)malloc(x *sizeof(char) + 1);
 if (array == NULL)
 {
 return (NULL);
