@@ -23,7 +23,7 @@ else
 s1len = _strlen(s1);
 s2len = _strlen(s2);
 array = (char *)malloc((s1len + s2len) *sizeof(char) + 1);
-if (s1len == 1 && s2len == 1)
+if (s1len == 1 || s2len == 1)
 {
 return (array);
 }
