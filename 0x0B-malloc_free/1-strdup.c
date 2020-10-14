@@ -13,7 +13,6 @@ char *_strdup(char *str)
 {
 char *array;
 int x, i;
-x = _strlen(str);
 
 if (str == NULL)
 {
@@ -21,6 +20,7 @@ return (NULL);
 }
 else
 {
+x = _strlen(str);
 array = (char *)malloc(x *(sizeof(char) + 1));
 if (array == NULL)
 {
