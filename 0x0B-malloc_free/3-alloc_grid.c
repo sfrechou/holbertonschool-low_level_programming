@@ -17,7 +17,7 @@ if (width <= 0 || height <= 0)
 {
 return (NULL);
 }
-array = (int **)malloc(height * sizeof(int));
+array = (int **)malloc(height * sizeof(int *));
 if (array == NULL)
 {
 return (NULL);
@@ -25,7 +25,7 @@ return (NULL);
 for (i = 0; i < height; i++)
 {
 array[i] = (int *)malloc(width * sizeof(int));
-if (array == NULL)
+if (array[i] == NULL)
 {
 return (NULL);
 }
