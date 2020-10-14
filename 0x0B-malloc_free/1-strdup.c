@@ -30,9 +30,8 @@ for (i = 0; str[i] != '\0'; i++)
 {
 array[i] = str[i];
 }
-return (array);
 }
-return (NULL);
+return (array);
 }
 
 #include "holberton.h"
