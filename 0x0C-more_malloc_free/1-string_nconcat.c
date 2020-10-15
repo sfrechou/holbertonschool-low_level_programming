@@ -33,7 +33,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	{
 	}
 
-	concat = (char *)malloc(lens1 * sizeof(char) + n + 1);
+	concat = (char *)malloc(i * sizeof(char) + n + 1);
 
 	if (concat == NULL)
 	{
