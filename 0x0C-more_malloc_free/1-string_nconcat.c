@@ -40,17 +40,11 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	}
 	if (n >= lens2)
 	{
-		for (j = 0; j <= lens2; j++)
-		{
-			concat[j + i] = s2[j];
-		}
+		n = lens2;
 	}
-	else
+	for (j = 0; j < n; j++)
 	{
-		for (j = 0; j < n; j++)
-		{
-			concat[j + i] = s2[j];
-		}
+		concat[j + i] = s2[j];
 	}
 	return (concat);
 }
