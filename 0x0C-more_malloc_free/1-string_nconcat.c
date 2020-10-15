@@ -14,19 +14,24 @@ int _strlen(char *s);
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 
-	unsigned int i, j, lens2;
+	unsigned int i, j, lens1, lens2;
 	char *concat;
 
+	lens1 = _strlen(s1);
 	lens2 = _strlen(s2);
-	concat = (char *)malloc((sizeof(s1) + sizeof(s2)) * sizeof(char) + 1);
+	concat = (char *)malloc((lens1 + n) * sizeof(char) + 1);
 
 	if (concat == NULL)
 	{
 		return (NULL);
 	}
-	if (s1 == "")
+	if (s1 == NULL)
 	{
-		return (NULL);
+		s1 = "";
+	}
+	if (s2 == NULL)
+	{
+		s2 = "";
 	}
 	for (i = 0; s1[i] != '\0'; i++)
 	{
@@ -49,22 +54,21 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	return (concat);
 }
 
-#include "holberton.h"
 /**
  * _strlen - Entry point
  * @s: d
  *
  * Return: Always 0 (Success)
  */
-	int _strlen(char *s)
-	{
-		int length;
+int _strlen(char *s)
+{
+	int length;
 
-		length = 0;
-		while (*s != '\0')
-		{
-			length++;
-			s++;
-		}
-		return (length);
+	length = 0;
+	while (*s != '\0')
+	{
+		length++;
+		s++;
 	}
+	return (length);
+}
