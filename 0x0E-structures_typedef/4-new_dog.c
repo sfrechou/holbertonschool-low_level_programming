@@ -15,14 +15,9 @@ int _strlen(char *s);
 dog_t *new_dog(char *name, float age, char *owner)
 {
 dog_t *dog2;
-char *name2;
-char *owner2;
+char *name2, *owner2;
 
-if (name == NULL)
-{
-return (NULL);
-}
-if (owner == NULL)
+if (name == NULL || owner == NULL)
 {
 return (NULL);
 }
@@ -53,9 +48,6 @@ dog2->age = age;
 dog2->owner = owner2;
 return (dog2);
 }
-
-#include <stdio.h>
-#include <stdlib.h>
 
 /**
  * _strdup - Entry point
