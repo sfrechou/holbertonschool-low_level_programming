@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 char *_strdup(char *str);
-int _strlen(char *s);
 
 /**
  * new_dog - Entry point
@@ -50,50 +49,32 @@ return (dog2);
 }
 
 /**
- * _strdup - Entry point
- * @str: d
+ * _strdup - array of chars
+ * @str: string
  *
- * Return: Always 0 (Success)
+ * Return: always
  */
+
 char *_strdup(char *str)
 {
-char *array;
-int x, i;
-
+char *s;
+int i;
+int ii;
 if (str == NULL)
 {
 return (NULL);
 }
-else
+for (i = 0; str[i] != '\0'; i++)
 {
-x = _strlen(str);
-array = (char *)malloc(x *sizeof(char) + 1);
-if (array == NULL)
+}
+s = malloc(i * sizeof(char) + 1);
+if (s == NULL)
 {
 return (NULL);
 }
-for (i = 0; i < x; i++)
+for (ii = 0; ii <= i; ii++)
 {
-array[i] = str[i];
+s[ii] = str[ii];
 }
-}
-return (array);
-}
-
-/**
- * _strlen - Entry point
- * @s: d
- *
- * Return: Always 0 (Success)
- */
-int _strlen(char *s)
-{
-int length;
-length = 0;
-while (*s != '\0')
-{
-length++;
-s++;
-}
-return (length);
+return (s);
 }
