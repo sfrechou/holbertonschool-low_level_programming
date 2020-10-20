@@ -11,7 +11,10 @@
  */
 void free_dog(dog_t *d)
 {
-free(dog2);
-free(dog_t);
+if (d == NULL)
+return;
+free(d->name);
+free(d->owner);
 free(d);
 }
+
