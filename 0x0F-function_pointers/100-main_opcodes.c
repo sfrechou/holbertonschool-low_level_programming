@@ -3,10 +3,10 @@
 #include "function_pointers.h"
 
 /**
- * array_iterator - Entry point
- * @array: s
- * @size: s
- * @action: s
+ * main - Entry point
+ * @argc: s
+ * @argv: s
+ *
  *
  *
  * Return: Always 0 (Success)
@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(1);
 	}
-	p = (char *)main;
+	p = (unsigned char *)main;
 	n = atoi(argv[1]);
 
 	if (n < 0)
