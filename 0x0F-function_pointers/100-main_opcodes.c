@@ -21,7 +21,6 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(1);
 	}
-	p = (unsigned char *)main;
 	n = atoi(argv[1]);
 
 	if (n < 0)
@@ -29,6 +28,7 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(2);
 	}
+	p = (unsigned char *)main;
 	for (i = 0; i < n - 1; i++, p++)
 	{
 		printf("%02x ", *p);
