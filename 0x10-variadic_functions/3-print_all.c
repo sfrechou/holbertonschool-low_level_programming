@@ -11,8 +11,6 @@ void printstring(char *str, va_list list);
  * print_all - Entry point
  * @format: s
  *
- *
- *
  * Return: Always 0 (Success)
  */
 void print_all(const char * const format, ...)
@@ -46,10 +44,9 @@ void print_all(const char * const format, ...)
 		}
 		a++;
 		b = 0;
+		va_end(list);
 	}
-
 	printf("\n");
-	va_end(list);
 }
 
 /**
@@ -104,7 +101,7 @@ void printstring(char *str, va_list list)
         char *temp;
         temp = va_arg(list, char *);
 
-        if (temp == NULL)
+        if (temp == NULL || *temp == '\0')
         {
                 printf("(nil)");
                 return;
