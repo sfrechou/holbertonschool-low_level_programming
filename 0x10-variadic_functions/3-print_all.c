@@ -28,7 +28,6 @@ void print_all(const char * const format, ...)
 
 	str = "";
 	a = 0;
-	b = 0;
 	va_start(list, format);
 
 	while (format[a] && format)
