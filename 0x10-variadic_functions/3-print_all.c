@@ -31,9 +31,9 @@ void print_all(const char * const format, ...)
 	b = 0;
 	va_start(list, format);
 
-	while (format[a] != '\0' && format != NULL)
+	while (format[a] && format)
 	{
-		while (type[b].caracter != NULL)
+		while (type[b].caracter)
 		{
 			if (type[b].caracter[0] == format[a])
 			{
