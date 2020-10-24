@@ -102,7 +102,7 @@ void printstring(char *str, va_list list)
 
 	temp = va_arg(list, char *);
 
-	if (temp == NULL || *temp == '\0')
+	if (temp == NULL)
 	{
 		printf("(nil)");
 		return;
