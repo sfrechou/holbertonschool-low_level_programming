@@ -9,7 +9,7 @@ void print_all(const char * const format, ...);
 /**
  * struct tipo - Struct op
  *
- * @character: The operator
+ * @caracter: The operator
  * @f: The function associated
  */
 typedef struct tipo
