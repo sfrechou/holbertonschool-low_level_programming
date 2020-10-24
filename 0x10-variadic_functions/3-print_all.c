@@ -85,7 +85,7 @@ void printint(char *str, va_list list)
  */
 void printfloat(char *str, va_list list)
 {
-        printf("%s%f", str, va_arg(list, double));
+	printf("%s%f", str, va_arg(list, double));
 }
 
 /**
@@ -98,14 +98,14 @@ void printfloat(char *str, va_list list)
  */
 void printstring(char *str, va_list list)
 {
-        char *temp;
-        temp = va_arg(list, char *);
+	char *temp;
+	temp = va_arg(list, char *);
 
-        if (temp == NULL || *temp == '\0')
-        {
-                printf("(nil)");
-                return;
-        }
+	if (temp == NULL || *temp == '\0')
+	{
+		printf("(nil)");
+		return;
+	}
 
-        printf("%s%s", str, temp);
+	printf("%s%s", str, temp);
 }
