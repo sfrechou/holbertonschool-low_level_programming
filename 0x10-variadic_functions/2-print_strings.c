@@ -12,15 +12,15 @@
  */
 void print_strings(const char *separator, const unsigned int n, ...)
 {
-        unsigned int i;
-        va_list mi_lista;
-	char * strings;
+	unsigned int i;
+	va_list mi_lista;
+	char *strings;
 
-        if (n > 0)
-        {
-                va_start(mi_lista, n);
-                for (i = 0; i < n; i++)
-                {
+	if (n > 0)
+	{
+		va_start(mi_lista, n);
+		for (i = 0; i < n; i++)
+		{
 			strings = (va_arg(mi_lista, char*));
 			if (strings != NULL)
 			{
@@ -31,11 +31,11 @@ void print_strings(const char *separator, const unsigned int n, ...)
 				}
 			}
 			else
-		       	{
-	       			printf("(nil)");
-       			}
+			{
+				printf("(nil)");
+			}
 			strings = "";
-                }
+		}
 		va_end(mi_lista);
 	}
 	printf("\n");
