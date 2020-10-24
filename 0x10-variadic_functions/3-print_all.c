@@ -31,7 +31,7 @@ void print_all(const char * const format, ...)
 	b = 0;
 	str = "";
 
-	while (format[a] && format)
+	while (format && format[a])
 	{
 		b = 0;
 		while (b < 4)
