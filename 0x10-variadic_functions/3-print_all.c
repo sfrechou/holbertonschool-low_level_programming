@@ -35,15 +35,16 @@ void print_all(const char * const format, ...)
 	{
 		while (type[b].caracter)
 		{
+			b = 0;
 			if (type[b].caracter[0] == format[a])
 			{
 				type[b].f(str, list);
 				str = ", ";
+				break;
 			}
 			b++;
 		}
 		a++;
-		b = 0;
 		va_end(list);
 	}
 	printf("\n");
