@@ -33,9 +33,9 @@ void print_all(const char * const format, ...)
 
 	while (format[a] && format)
 	{
-		while (type[b].caracter)
+		b = 0;
+		while (b < 4)
 		{
-			b = 0;
 			if (type[b].caracter[0] == format[a])
 			{
 				type[b].f(str, list);
