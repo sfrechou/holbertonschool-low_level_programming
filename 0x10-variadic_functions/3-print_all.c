@@ -104,8 +104,7 @@ void printstring(char *str, va_list list)
 
 	if (temp == NULL || *temp == '\0')
 	{
-		printf("(nil)");
-		return;
+		temp = "(nil)";
 	}
 
 	printf("%s%s", str, temp);
