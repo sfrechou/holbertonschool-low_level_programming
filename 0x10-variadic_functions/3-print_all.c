@@ -99,6 +99,7 @@ void printfloat(char *str, va_list list)
 void printstring(char *str, va_list list)
 {
 	char *temp;
+
 	temp = va_arg(list, char *);
 
 	if (temp == NULL || *temp == '\0')
