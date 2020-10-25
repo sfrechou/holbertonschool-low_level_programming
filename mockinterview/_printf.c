@@ -9,6 +9,7 @@ void printchar(va_list list);
 void printstring(va_list list);
 void printpercent(va_list list);
 void printint(va_list list);
+void _printint(int n);
 void printdecimal(va_list list);
 int main(void);
 
@@ -38,19 +39,19 @@ void _printf(const char * const format, ...)
 	while (format[i] != '\0')
 	{
 		flag = 0;
-			if (format[i] == '%')
+		if (format[i] == '%')
+		{
+			while(functions[j].caracter != NULL)
 			{
-				while(functions[j].caracter != NULL)
+				if(format[i + 1] == functions[j].caracter[0])
 				{
-					if(format[i + 1] == functions[j].caracter[0])
-					{
-						flag = 1;
-						functions[j].f(arguments);
-						break;
-					}
-					j++;
+					flag = 1;
+					functions[j].f(arguments);
+					break;
 				}
+				j++;
 			}
+		}
 
 		if (flag == 1)
 		{
@@ -122,25 +123,16 @@ void printpercent(va_list arguments)
  */
 void printint(va_list arguments)
 {
-	int k;
-	int *n;
-	*n = va_arg(arguments, int);
-	for (k = 0; n[k] != '\0'; k++)
+	int n;
+	n = va_arg(arguments, int);
+	if (n < 0)
 	{
-		if (n[k] < 0)
-		{
-			putchar('-');
-			n[k] *= -1;
-		}
-		if (n[k]/10)
-		{
-			printint(n[k]/10);
-		}
-		putchar((n[k] % 10) + '0');
+		putchar('-');
+		n *= -1;
 	}
+	_printint(n);
+
 }
-
-
 /**
  * printdecimal - Entry point
  * @list: d
@@ -150,7 +142,28 @@ void printint(va_list arguments)
  */
 void printdecimal(va_list arguments)
 {
-        write(1, arguments, 1);
+	int n;
+	n = va_arg(arguments, int);
+	if (n < 0)
+	{
+		putchar('-');
+		n *= -1;
+	}
+	_printint(n);
+
+}
+/**
+ * _printint - Recursive function to print an int.
+ * @n: int value of argument.
+ * Return: void.
+ */
+void _printint(int n)
+{
+	if((n / 10) > 0)
+	{
+		_printint(n / 10);
+	}
+	putchar((n % 10) + '0');
 }
 
 /**
@@ -164,6 +177,6 @@ int main(void)
 	_printf("String:[%s%s%s]\n", "Hola", "printf", "casero");
 	_printf("Double Percent:[%%%%]\n");
 	_printf("Character:[%d%d%d]\n", 01, 410000, 8);
-	_printf("Character:[%i%i%i]\n", -12, 410000, 8);
+	_printf("Character:[%i%i%i%i]\n", -12, 410000, 8, -4410);
 	return (0);
 }
