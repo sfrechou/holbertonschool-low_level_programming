@@ -15,7 +15,7 @@ main:
 	    mov rax, sys_write
 	    mov rdi, stdout
 	    mov rsi, message
-	    mov rdx, 16
+	    mov rdx, 17
 	    syscall
 
 	    mov rax, sys_exit
