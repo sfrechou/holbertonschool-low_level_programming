@@ -1,51 +1,23 @@
-extern printf
-	extern fflush
+%define sys_write 1
+	%define stdout 1
 
-	LINUX        equ     80H ; interupt number for entering Linux kernel
-	EXIT         equ     60	 ; Linux system call 1 i.e. exit ()
+	%define sys_exit 60
+	%define success 0
 
 	section .data
-outputstringfmt:	 db "%s", 0
-sentence0:	 db "Hello, Holberton", 10
 
+	message db "Hello, Holberton", 10
 
-	segment .text
-	    global  main
+	section .text
 
-
+	global main
 main:
-	    mov r8, sentence0
-	    push r8
-	    call print_sentence
-	    add rsp, 8
-	    call os_return
+	    mov rax, sys_write
+	    mov rdi, stdout
+	    mov rsi, message
+	    mov rdx, 16
+	    syscall
 
-print_sentence:
-	    push rbp
-	    mov rbp, rsp
-	    push r12
-	    mov r12, [rbp + 16]
-	    push rsi
-	    push rdi
-	    push r8
-	    push r9
-	    push r10
-	    mov rsi, r12
-	    mov rdi, outputstringfmt
-	    xor rax, rax
-	    call printf
-	    xor rax, rax
-	    call fflush
-	    pop r10
-	    pop r9
-	    pop r8
-	    pop rdi
-	    pop rsi
-	    pop r12
-	    pop rbp
-	    ret
-
-os_return:
-	    mov  rax, EXIT      ; Linux system call 1 i.e. exit ()
-	    mov  rdi, 0     	; Error code 0 i.e. no errors
-	    syscall     	; Interrupt Linux kernel 64-bit
+	    mov rax, sys_exit
+	    mov rdi, success
+	    syscall
