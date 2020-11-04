@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * free_list - function that prints number of elements in list
+ * insert_nodeint_at_index - function that prints number of elements in list
  * @head: pointer to list to print
  * @idx: idx
  * @n: ene
@@ -11,23 +11,30 @@
  */
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
-	listint_t *newnode = malloc(sizeof(listint_t)), *temp;
+	listint_t *newnode, *temp;
 	unsigned int i;
 
+	if (head == NULL)
+	{
+		return (NULL);
+	}
+	newnode = malloc(sizeof(listint_t));
 	if (newnode == NULL)
 	{
+		free(newnode);
 		return (NULL);
 	}
 
 	newnode->n = n;
-	newnode->next = NULL;
 	temp = (*head);
 
 	if (idx == 0)
 	{
-		newnode->next = temp;
+		newnode->next = (*head);
+		(*head) = newnode;
+		return (newnode);
 	}
-	for (i = 0; i < idx - 1; i++)
+	for (i = 0; i < (idx - 1); i++)
 	{
 		temp = temp->next;
 		if (temp == NULL)
@@ -35,14 +42,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 			return (NULL);
 		}
 	}
-	if (temp != NULL)
-	{
-		newnode->next = temp->next;
-		temp->next = newnode;
-	}
-	else
-	{
-		return (NULL);
-	}
+	newnode->next = temp->next;
+	temp->next = newnode;
 	return (newnode);
 }
