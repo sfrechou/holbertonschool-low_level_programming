@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * free_list - function that prints number of elements in list
+ * free_listint - function that prints number of elements in list
  * @head: pointer to list to print
  *
  *
