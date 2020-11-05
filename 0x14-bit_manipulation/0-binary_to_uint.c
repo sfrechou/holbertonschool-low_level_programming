@@ -12,7 +12,7 @@ unsigned int binary_to_uint(const char *b)
 	int potencia = 1, i = 0, j, k = 0;
 	unsigned int c = 0, num1 = 0, num2 = 0;
 
-	if (b == NULL || b == '\0')
+	if (b == NULL)
 		return (0);
 	while (b[i] != '\0')
 	{
@@ -25,6 +25,10 @@ unsigned int binary_to_uint(const char *b)
 	{
 		c += ((b[j] - '0') * potencia);
 		potencia *= 10;
+	}
+	if (c > INT_MAX)
+	{
+		return (0);
 	}
 	while (c != 0)
 	{
