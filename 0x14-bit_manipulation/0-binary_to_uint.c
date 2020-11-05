@@ -9,7 +9,7 @@
  */
 unsigned int binary_to_uint(const char *b)
 {
-	int potencia = 1, i = 0, j, k = 1;
+	int potencia = 1, i = 0, j, k = 0;
 	unsigned int c = 0, num1 = 0, num2 = 0;
 
 	if (b == NULL || b == '\0')
@@ -29,9 +29,9 @@ unsigned int binary_to_uint(const char *b)
 	while (c != 0)
 	{
 		num1 = c % 10;
-		num2 += num1 * k;
+		num2 += num1 << k;
 		c = c / 10;
-		k *= 2;
+		k++;
 	}
 	return (num2);
 }
