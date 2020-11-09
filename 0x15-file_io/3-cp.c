@@ -19,7 +19,7 @@ int main(int ac, char **av)
 		exit(97);
 	}
 	fileto = open(av[2], O_CREAT | O_TRUNC | O_RDWR, 0664);
-	if (fileto == -1 || av[1] == NULL)
+	if (fileto == -1)
 	{
 		dprintf(2, "Error: Can't write to file %s\n", av[2]);
 		exit(98);
