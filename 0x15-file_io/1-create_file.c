@@ -21,11 +21,13 @@ int create_file(const char *filename, char *text_content)
 	{
 		return (-1);
 	}
-	while (text_content[length] != '\0')
+	if (text_content != NULL)
 	{
-		length++;
+		while (text_content[length] != '\0')
+		{
+			length++;
+		}
+		write(fd, text_content, length);
 	}
-
-	write(fd, text_content, length);
 	return (1);
 }
