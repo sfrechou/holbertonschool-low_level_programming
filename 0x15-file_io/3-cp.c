@@ -23,7 +23,7 @@ int main(int ac, char **av)
 	fileto = open(av[2], O_WRONLY | O_CREAT | O_TRUNC, 00664);
         if (fileto == -1)
         {
-                dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", av[2]);
+                dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
                 exit(99);
         }
 	filefrom = open(av[1], O_RDONLY);
@@ -50,7 +50,7 @@ int main(int ac, char **av)
 			if (wr == -1)
 			{
 				free(buff);
-				dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", av[2]);
+				dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
 				exit(99);
 			}
 		}
