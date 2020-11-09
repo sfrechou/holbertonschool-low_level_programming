@@ -18,13 +18,13 @@ int main(int ac, char **av)
 		dprintf(2, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-	fileto = open(av[2], O_CREAT | O_TRUNC | O_RDWR, 0664);
+	fileto = open(av[2], O_CREAT | O_TRUNC | O_WRONLY, 0664);
 	if (fileto == -1)
 	{
 		dprintf(2, "Error: Can't write to file %s\n", av[2]);
 		exit(99);
 	}
-	filefrom = open(av[1], O_RDWR, 0664);
+	filefrom = open(av[1], O_RDONLY);
 	if (filefrom == -1)
 	{
 		dprintf(2, "Error: Can't read from file %s\n", av[1]);
