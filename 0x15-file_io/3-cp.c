@@ -10,7 +10,7 @@
  */
 int main(int ac, char **av)
 {
-	int fileto = 0, filefrom = 0, rd, closeto = 0,  closefrom = 0;
+	int fileto = 0, filefrom = 0, rd, closeto = 0,  closefrom = 0, wr;
 	char *buf = malloc(1024);
 
 	if (ac != 3)
@@ -19,19 +19,19 @@ int main(int ac, char **av)
 		exit(97);
 	}
 	filefrom = open(av[1], O_RDWR);
-	if (filefrom == -1)
+	fileto = open(av[2], O_CREAT | O_TRUNC | O_RDWR, 00664);
+	rd = read(filefrom, buf, 1024);
+	if (filefrom == -1 || rd == -1)
 	{
 		dprintf(2, "Error: Can't read from file %s\n", av[1]);
 		exit(98);
 	}
-	fileto = open(av[2], O_CREAT | O_TRUNC | O_RDWR, 00664);
-	if (fileto == -1)
+	wr = write(fileto, buf, rd);
+	if (fileto == -1 || wr == -1)
 	{
 		dprintf(2, "Error: Can't write to file %s\n", av[2]);
 		exit(99);
 	}
-	rd = read(filefrom, buf, 1024);
-	write(fileto, buf, rd);
 	closeto = close(fileto);
 	closefrom = close(filefrom);
 	if (closeto == -1)
