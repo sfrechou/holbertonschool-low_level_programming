@@ -10,7 +10,7 @@
  */
 int main(int ac, char **av)
 {
-	int fileto = 0, filefrom = 0, rd, closeto = 0,  closefrom = 0, wr;
+	int fileto, filefrom, rd, closeto,  closefrom, wr;
 	char buf[1024];
 
 	if (ac != 3)
