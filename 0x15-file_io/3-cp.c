@@ -19,11 +19,11 @@ int main(int ac, char **av)
 		exit(97);
 	}
 	filefrom = open(av[1], O_RDWR);
-        if (filefrom == -1)
-        {
-                dprintf(2, "Error: Can't read from file %s\n", av[1]);
-                exit(98);
-        }
+	if (filefrom == -1)
+	{
+		dprintf(2, "Error: Can't read from file %s\n", av[1]);
+		exit(98);
+	}
 	fileto = open(av[2], O_CREAT | O_TRUNC | O_RDWR, 00664);
 	if (fileto == -1)
 	{
