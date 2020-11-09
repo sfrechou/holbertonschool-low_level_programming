@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * read_textfile - function that prints a list
+ * append_text_to_file - function that prints a list
  * @filename: file to read and write
  * @text_content: numbers of characters
  *
