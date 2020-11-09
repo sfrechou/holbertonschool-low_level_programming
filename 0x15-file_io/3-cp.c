@@ -20,7 +20,7 @@ int main(int ac, char **av)
 	}
 	fileto = open(av[2], O_CREAT | O_TRUNC | O_RDWR, 00664);
 	filefrom = open(av[1], O_RDONLY);
-	rd = read(filefrom, buf, 1023);
+	rd = read(filefrom, buf, 1024);
 	if (filefrom == -1 || rd == -1)
 	{
 		dprintf(2, "Error: Can't read from file %s\n", av[1]);
