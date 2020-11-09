@@ -11,7 +11,7 @@
 int main(int ac, char **av)
 {
 	int fileto = 0, filefrom = 0, rd, closefilefrom, closefileto;
-	char *buf [1024];
+	char *buf = malloc(1024);
 
 	if (ac != 3)
 	{
