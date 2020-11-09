@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * crete_file - function that prints a list
+ * create_file - function that prints a list
  * @filename: file to read and write
  * @text_content: numbers of characters
  *
@@ -16,7 +16,7 @@ int create_file(const char *filename, char *text_content)
 	{
 		return (-1);
 	}
-	fd = open(filename, O_CREAT | O_RDWR, 0600);
+	fd = open(filename, O_CREAT | O_TRUNC | O_RDWR, 0600);
 	if (fd == -1)
 	{
 		return (-1);
@@ -29,5 +29,6 @@ int create_file(const char *filename, char *text_content)
 		}
 		write(fd, text_content, length);
 	}
+	close(fd);
 	return (1);
 }
