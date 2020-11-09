@@ -18,8 +18,8 @@ int main(int ac, char **av)
 		dprintf(2, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-	filefrom = open(av[1], O_RDONLY);
 	fileto = open(av[2], O_CREAT | O_TRUNC | O_RDWR, 00664);
+	filefrom = open(av[1], O_RDONLY);
 	rd = read(filefrom, buf, 1023);
 	if (filefrom == -1 || rd == -1)
 	{
