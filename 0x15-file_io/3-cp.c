@@ -10,7 +10,7 @@
  */
 int main(int ac, char **av)
 {
-	int fileto = 0, filefrom = 0, rd;
+	int fileto = 0, filefrom = 0, rd, closefilefrom, closefileto;
 	char *buf [1024];
 
 	if (ac != 3)
@@ -31,5 +31,17 @@ int main(int ac, char **av)
 	}
 	rd = read(filefrom, buf, 1024);
 	write(fileto, buf, rd);
+	closefileto = close(fileto);
+	closefilefrom = close(filefrom);
+	if (closefileto == -1)
+	{
+		dprintf(2, "Error: Can't close fd %d\n", closefileto);
+		exit(100);
+	}
+	if (closefilefrom == -1)
+	{
+		dprintf(2, "Error: Can't close fd %d\n", closefilefrom);
+		exit(100);
+	}
 	return (1);
 }
