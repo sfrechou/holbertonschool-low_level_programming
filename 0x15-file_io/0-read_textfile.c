@@ -1,9 +1,9 @@
 #include "holberton.h"
 
 /**
- * flip_bits - function that prints a list
- * @n: number 1
- * @m: number 2
+ * read_textfile - function that prints a list
+ * @filename: file to read and write
+ * @letters: numbers of characters
  *
  * Return: On success 1.
  * On error, -1 is returned, and errno is set appropriately.
