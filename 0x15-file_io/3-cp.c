@@ -11,14 +11,14 @@
 int main(int ac, char **av)
 {
 	int fileto = 0, filefrom = 0, rd, closeto = 0,  closefrom = 0, wr;
-	char *buf[1024];
+	char buf[1024];
 
 	if (ac != 3)
 	{
 		dprintf(2, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-	filefrom = open(av[1], O_RDWR);
+	filefrom = open(av[1], O_RDONLY);
 	fileto = open(av[2], O_CREAT | O_TRUNC | O_RDWR, 00664);
 	rd = read(filefrom, buf, 1023);
 	if (filefrom == -1 || rd == -1)
