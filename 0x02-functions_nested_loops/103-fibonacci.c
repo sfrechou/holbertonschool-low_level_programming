@@ -10,8 +10,8 @@ void fibonacci(void);
  */
 int main(void)
 {
-  fibonacci();
-  return (0);
+	fibonacci();
+	return (0);
 }
 
 /**
@@ -23,23 +23,20 @@ int main(void)
  */
 void fibonacci(void)
 {
-long int a, now, before, next, sum;
-now = 1;
-before = 0;
-sum = 0;
-if (now < 4000000)
-{
-for (a = 0; ; a++)
-{
-next = now + before;
-if ((now % 2) == 0)
-{
-sum += now;
-before = now;
-now = next;
-}
-printf("%ld\n", sum);
-}
-printf("\n");
-}
+	signed long int a, now, before, next, sum;
+
+	now = 1;
+	before = 0;
+	sum = 0;
+	for (a = 0; a < 32; a++)
+	{
+		next = now + before;
+		before = now;
+		now = next;
+		if ((next % 2) == 0)
+		{
+			sum += next;
+		}
+	}
+	printf("%ld\n", sum);
 }
