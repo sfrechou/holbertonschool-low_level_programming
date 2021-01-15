@@ -1,24 +1,25 @@
 #include "holberton.h"
 char **lsh_split_line(char *line);
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
+int pedircomando(void);
 /**
  * main - simple command interpreter
  * Return: 0;
  */
-void pedircomando(void);
 int main(void)
 {
 	while (1)
 	{
 		write(1, "$ ", 2);
-		pedircomando();
+		if (pedircomando() == 0)
+			exit(0);
 	}
 	return (0);
 }
 /**
  * pedircomando - ask command
  */
-void pedircomando(void)
+int pedircomando(void)
 {
 	size_t buffsize = 0, len;
 	char *buffer = NULL, **argv;
@@ -27,13 +28,25 @@ void pedircomando(void)
 
 	/** write(1, "$ ", 2);*/
 	len = getline(&buffer, &buffsize, stdin);
+	if (len == -1)
+	{
+		if (len == EOF)
+		{
+			return (0);
+		}
+		perror("");
+	}
 	buffer[len - 1] = '\0';
+	/*printf("----%s----", buffer);*/
+	if (strcmp(buffer, "exit") == 0)
+	{
+	return 0;
+	}
 	argv = lsh_split_line(buffer);
 	child_pid = fork();
 	if (child_pid == -1)
 	{
 		perror("Error:");
-		/**return (1);*/
 	}
 	if (child_pid == 0)
 	{
@@ -46,6 +59,7 @@ void pedircomando(void)
 	{
 		wait(&status);
 	}
+	return 1;
 }
 
 
