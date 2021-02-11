@@ -6,17 +6,17 @@ RM = rm
 
 all: $(NAME)
 
+$(NAME): $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
+
 clean:
 	$(RM) -f *~ $(NAME)
 
 oclean:
-	$(RM) -f *.o
+	$(RM) -f $(OBJ)
 
 fclean:
 	$(RM) -f *.~ $(NAME)
-	$(RM) -f *.o
-
-$(NAME): $(OBJ)
-	$(CC) $(OBJ) -o $@
+	$(RM) -f $(OBJ)
 
 re: oclean all
