@@ -1,4 +1,4 @@
-CC = gcc
+CC = gc
 SRC = main.c holberton.c
 OBJ = $(SRC:%.c=%.o)
 NAME = holberton
