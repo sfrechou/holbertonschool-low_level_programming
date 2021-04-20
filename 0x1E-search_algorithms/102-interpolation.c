@@ -1,7 +1,7 @@
 #include "search_algos.h"
 
 /**
- * jump_search -  jump search algorithm
+ * interpolation_search -  interpolation search algorithm
  * @array: pointer to the first element of the array to search in
  * @size: is the number of elements in array
  * @value: the value to search for
@@ -15,6 +15,8 @@ int interpolation_search(int *array, size_t size, int value)
 	size_t high = size - 1;
 	size_t pos;
 
+	if (array == NULL)
+		return (-1);
 	while ((array[high] != array[low]) && (value >= array[low])
 		&& (value <= array[high]))
 	{
