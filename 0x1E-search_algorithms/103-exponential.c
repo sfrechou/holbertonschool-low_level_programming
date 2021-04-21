@@ -18,12 +18,12 @@ int exponential_search(int *array, size_t size, int value)
 	if (array == NULL)
 		return (-1);
 
-    bound = 1;
+	bound = 1;
 	while (bound < size && array[bound] <= value)
 	{
 		printf("Value checked array[%li] = [%i]\n", bound, array[bound]);
 		bound *= 2;
-    }
+	}
 	if (bound < size - 1)
 	{
 		printf("Value found between indexes [%lu] and [%lu]\n", bound / 2, bound);
@@ -39,7 +39,8 @@ int exponential_search(int *array, size_t size, int value)
 /**
  * binary_search_ -  exponential search algorithm
  * @array: pointer to the first element of the array to search in
- * @size: is the number of elements in array
+ * @left: left bound array
+ * @right: right bound for array
  * @value: the value to search for
  *
  *
