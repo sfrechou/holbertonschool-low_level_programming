@@ -18,7 +18,7 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 		return (NULL);
 
 	aux = list;
-	while (aux->next != NULL && aux->n <= value)
+	while (aux->next != NULL && aux->n < value)
 	{
 		prev = aux;
 		while (aux->next != NULL && aux->index < jump_step)
