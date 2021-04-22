@@ -21,9 +21,10 @@ int advanced_binary(int *array, size_t size, int value)
 }
 
 /**
- * advanced_binary -  advanced binary search algorithm
+ * adv_binary_search -  advanced binary search algorithm
  * @array: pointer to the first element of the array to search in
- * @size: is the number of elements in array
+ * @left: let bound of array
+ * @right: right bound of array
  * @value: the value to search for
  *
  *
@@ -33,9 +34,9 @@ int adv_binary_search(int *array, size_t left, size_t right, int value)
 {
 	size_t mid = 0, i;
 
-    if (right >= left)
-    {
-        mid = left + (right - left) / 2;
+	if (right >= left)
+	{
+		mid = left + (right - left) / 2;
 
 		printf("Searching in array: ");
 		for (i = left; i <= right; i++)
@@ -46,16 +47,16 @@ int adv_binary_search(int *array, size_t left, size_t right, int value)
 				printf("%i, ", array[i]);
 		}
 		if (array[left] == value)
-            return (left);
+			return (left);
 
 		if (array[mid] == value && array[mid - 1] != value)
-            return (mid);
+			return (mid);
 
-        if (array[mid] >= value)
-            return adv_binary_search(array, left, mid, value);
+		if (array[mid] >= value)
+			return (adv_binary_search(array, left, mid, value));
 
 		if (array[mid] < value)
-	        return adv_binary_search(array, mid + 1, right, value);
+			return (adv_binary_search(array, mid + 1, right, value));
 	}
 	return (-1);
 }
